@@ -1,0 +1,16 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <a routerLink="/components/buttons">Buttons</a>
+    <a routerLink="/components/table">Table</a>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-raised-button class="primary-button">click me</button>
+    <button mat-raised-button class="tertiary-button">click me</button>
+
+    <mat-checkbox class="tertiary-checkbox" />
+    <section class="tertiary-checkbox">
+      <mat-checkbox />
+    </section>
+    <router-outlet />
+  </mat-drawer-content>
+</mat-drawer-container>

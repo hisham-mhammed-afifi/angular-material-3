@@ -1,1 +1,62 @@
+@use "@angular/material" as mat;
+@use "./m3-theme" as m3-theme;
+
+@include mat.core();
+
+:root {
+  // Apply the dark theme by default
+  @include mat.core-theme(m3-theme.$dark-theme);
+  @include mat.all-component-themes(m3-theme.$dark-theme);
+  // @include mat.button-theme(m3-theme.$dark-theme);
+  // @include mat.strong-focus-indicators-theme(m3-theme.$dark-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($material-playground-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($material-playground-theme);
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.primary-button {
+  @include mat.button-color(m3-theme.$dark-theme, $color-variant: primary);
+}
+
+.tertiary-button {
+  @include mat.button-color(m3-theme.$dark-theme, $color-variant: tertiary);
+}
+
+.active {
+  @include mat.strong-focus-indicators(m3-theme.$dark-theme);
+}
+
+.flex {
+  display: flex;
+
+  &.gap {
+    gap: 1rem;
+  }
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
